@@ -1,0 +1,160 @@
+<body>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDYwn3QME7AM2iMkkjlBD0xVcH6nu8gDps",
+    authDomain: "melanin-mogul-db.firebaseapp.com",
+    databaseURL: "https://melanin-mogul-db.firebaseio.com",
+    projectId: "melanin-mogul-db",
+    storageBucket: "melanin-mogul-db.appspot.com",
+    messagingSenderId: "260786215546",
+    appId: "1:260786215546:web:d2d7fe5a12fac550e2f9c3",
+    measurementId: "G-DW2ZL0BF5B"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+
+  function writeData(){
+    firebase.database().ref("User").set({
+      firstname: document.getElementById("empFirstName").value,
+      lastname: document.getElementById("empLastName").value,
+      schoolname: document.getElementById("empSchoolName").value,
+      mogulid: document.getElementById("empMogulId").value,
+      email: document.getElementById("empEmail").value,
+      password: document.getElementById("empPassword").value
+    });
+  }
+</script>
+
+
+
+
+
+
+<button class="btn btn-primary" (click)="toLogin()"> Back </button>
+<form #employeeForm="ngForm" (ngSubmit)="onSubmit()" [hidden]="submitted">
+	<section class="form-block">
+		<label>Become a Melanin Mogul</label>
+		<div class="form-group">
+			<label for="empFirstName">First name</label>
+			<label for="empFirstName"
+                aria-haspopup="true"
+                role="tooltip"
+                class="tooltip tooltip-validation tooltip-md"
+                [class.invalid]="firstNameInput.invalid && (firstNameInput.dirty || firstNameInput.touched)">
+                <input type="text" id="empFirstName" placeholder="Enter First Name"
+                    required
+                    name="firstName"
+                    [(ngModel)]="user.firstName"
+                    #firstNameInput="ngModel">
+                <span class="tooltip-content">
+                    First Name is Required.
+                </span>
+            </label>
+		</div>
+		<div class="form-group">
+			<label for="empLastName">Last name</label>
+			<label for="empLastName"
+                aria-haspopup="true"
+                role="tooltip"
+                class="tooltip tooltip-validation tooltip-md"
+                [class.invalid]="lastNameInput.invalid && (lastNameInput.dirty || lastNameInput.touched)">
+                <input type="text" id="empLastName" placeholder="Enter Last Name"
+                    required
+                    name="lastName"
+                    [(ngModel)]="user.lastName"
+                    #lastNameInput="ngModel">
+                <span class="tooltip-content">
+                    Last Name is Required.
+                </span>
+            </label>
+		</div>
+		<div class="form-group">
+			<label for="empSchoolName">School name</label>
+			<label for="empSchoolName"
+                aria-haspopup="true"
+                role="tooltip"
+                class="tooltip tooltip-validation tooltip-md"
+                [class.invalid]="SchoolNameInput.invalid && (SchoolNameInput.dirty || SchoolNameInput.touched)">
+                <input type="text" id="empSchoolName" placeholder="Enter School Name"
+                    required
+                    name="schoolName"
+                    [(ngModel)]="user.schoolName"
+                    #schoolNameInput="ngModel">
+                <span class="tooltip-content">
+                    School Name is Required.
+                </span>
+            </label>
+		</div>
+
+    <div class="form-group">
+			<label for="empMogulId">Mogul Id</label>
+			<label for="empMogulId"
+                aria-haspopup="true"
+                role="tooltip"
+                class="tooltip tooltip-validation tooltip-md"
+                [class.invalid]="MogulIdInput.invalid && (MogulIdInput.dirty || MogulIdInput.touched)">
+                <input type="text" id="empMogulId" placeholder="Enter Mogul Id"
+                    required
+                    name="mogulId"
+                    [(ngModel)]="user.mogulId"
+                    #mogulIdInput="ngModel">
+                <span class="tooltip-content">
+                    Mogul Id is Required.
+                </span>
+            </label>
+		</div>
+
+		<div class="form-group">
+			<label for="empEmail">Email</label>
+			<label for="empEmail"
+                aria-haspopup="true"
+                role="tooltip"
+                class="tooltip tooltip-validation tooltip-md"
+                [class.invalid]="emailInput.invalid && (emailInput.dirty || emailInput.touched)">
+                <input type="text" 
+                id="empEmail" placeholder="Enter Email"
+                    required
+                    name="email"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+                    title="xyz@something.edu"
+                    required
+                    [(ngModel)]="user.email"
+                    #emailInput="ngModel">        
+                <span class="tooltip-content">
+                    Email is Required.
+                </span>
+            </label>
+		</div>
+		<div class="form-group">
+			<label for="empPassword">Password</label>
+			<label for="empPassword"
+                aria-haspopup="true"
+                role="tooltip"
+                class="tooltip tooltip-validation tooltip-md"
+                [class.invalid]="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)">
+                <input type="password" id="empEmail" placeholder="Enter Password"
+                    required
+                    name="password"
+                    [(ngModel)]="user.password"
+                    #passwordInput="ngModel">
+                <span class="tooltip-content">
+                    Password is Required.
+                </span>
+            </label>
+		</div>
+<<<a href="https://melanin-mogul-blog-3-30.stackblitz.io">Register</a>>>
+<button onclick= "writeData()"> Submit </button>
+	</section>
+</form>
+</body>

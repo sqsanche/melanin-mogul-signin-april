@@ -1,0 +1,50 @@
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+  
+  <script src="https://bootswatch.com/_vendor/jquery/dist/jquery.min.js"></script>
+  <script src="https://bootswatch.com/_vendor/popper.js/dist/umd/popper.min.js"></script>
+  <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</head>
+
+
+<div class="login-wrapper">
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" class="login">
+       
+        <label class="title">
+            <h3 align="center">Welcome to
+            Melanin Mogul ♛
+           </h3>
+        </label>
+
+        <h5 class="hint">Use your Mogul ID to sign in</h5>
+        <div class="login-group">
+            
+            <input required class="username" 
+              name="email" 
+              [(ngModel)]="user.email" 
+              type="text" 
+              id="login_username" 
+              placeholder="Email">
+            
+            <input required class="password" 
+              name="password" 
+              [(ngModel)]="user.password" 
+              type="password" 
+              id="login_password" 
+              placeholder="Password">
+            
+           <!-- <button type="submit" 
+              class="btn btn-primary"
+              [disabled]="loginForm.form.invalid">
+                Login
+            </button> -->
+            <button onclick="window.location.href = 'https://melanin-mogul-blog-3-30.stackblitz.io/';">Login </button>
+           
+            <a routerLink="register" 
+              class="signup">
+                Sign up for an Account
+            </a>
+          </div>
+    </form>
+</div>
