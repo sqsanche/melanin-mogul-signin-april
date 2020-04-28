@@ -46,7 +46,7 @@
 	<section class="form-block">
 		<label>Become a Melanin Mogul</label>
 		<div class="form-group">
-			<label for="empFirstName">First name</label>
+			<label for="empFirstName">Full Name</label>
 			<label for="empFirstName"
                 aria-haspopup="true"
                 role="tooltip"
@@ -58,41 +58,7 @@
                     [(ngModel)]="user.firstName"
                     #firstNameInput="ngModel">
                 <span class="tooltip-content">
-                    First Name is Required.
-                </span>
-            </label>
-		</div>
-		<div class="form-group">
-			<label for="empLastName">Last name</label>
-			<label for="empLastName"
-                aria-haspopup="true"
-                role="tooltip"
-                class="tooltip tooltip-validation tooltip-md"
-                [class.invalid]="lastNameInput.invalid && (lastNameInput.dirty || lastNameInput.touched)">
-                <input type="text" id="empLastName" placeholder="Enter Last Name"
-                    required
-                    name="lastName"
-                    [(ngModel)]="user.lastName"
-                    #lastNameInput="ngModel">
-                <span class="tooltip-content">
-                    Last Name is Required.
-                </span>
-            </label>
-		</div>
-		<div class="form-group">
-			<label for="empSchoolName">School name</label>
-			<label for="empSchoolName"
-                aria-haspopup="true"
-                role="tooltip"
-                class="tooltip tooltip-validation tooltip-md"
-                [class.invalid]="SchoolNameInput.invalid && (SchoolNameInput.dirty || SchoolNameInput.touched)">
-                <input type="text" id="empSchoolName" placeholder="Enter School Name"
-                    required
-                    name="schoolName"
-                    [(ngModel)]="user.schoolName"
-                    #schoolNameInput="ngModel">
-                <span class="tooltip-content">
-                    School Name is Required.
+                    Full Name is Required.
                 </span>
             </label>
 		</div>
@@ -153,8 +119,13 @@
                 </span>
             </label>
 		</div>
-<<<a href="https://melanin-mogul-blog-3-30.stackblitz.io">Register</a>>>
-<button onclick= "writeData()"> Submit </button>
+    <div class="form-group">
+      <label for="exampleInputFile">Upload an Avatar Picture</label>
+      <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+      <small id="fileHelp" class="form-text text-muted"></small>
+    </div>
+<a href="https://melanin-mogul-blog-april.stackblitz.io">Register</a>
+
 	</section>
 </form>
 </body>
