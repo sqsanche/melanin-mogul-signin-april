@@ -1,46 +1,4 @@
 <body>
-
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
-
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyDYwn3QME7AM2iMkkjlBD0xVcH6nu8gDps",
-    authDomain: "melanin-mogul-db.firebaseapp.com",
-    databaseURL: "https://melanin-mogul-db.firebaseio.com",
-    projectId: "melanin-mogul-db",
-    storageBucket: "melanin-mogul-db.appspot.com",
-    messagingSenderId: "260786215546",
-    appId: "1:260786215546:web:d2d7fe5a12fac550e2f9c3",
-    measurementId: "G-DW2ZL0BF5B"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-
-
-  function writeData(){
-    firebase.database().ref("User").set({
-      firstname: document.getElementById("empFirstName").value,
-      lastname: document.getElementById("empLastName").value,
-      schoolname: document.getElementById("empSchoolName").value,
-      mogulid: document.getElementById("empMogulId").value,
-      email: document.getElementById("empEmail").value,
-      password: document.getElementById("empPassword").value
-    });
-  }
-</script>
-
-
-
-
-
-
 <button class="btn btn-primary" (click)="toLogin()"> Back </button>
 <form #employeeForm="ngForm" (ngSubmit)="onSubmit()" [hidden]="submitted">
 	<section class="form-block">
